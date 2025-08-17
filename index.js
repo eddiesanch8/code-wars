@@ -25,7 +25,7 @@ function findOutlier(integers) {
   }
 }
 
-console.log(findOutlier(mostlyOdd));
+console.log("Q1: Find the outlier in a given array ", findOutlier(mostlyOdd));
 
 // 2. Create a function that returns the sum of the two lowest positive numbers given an array
 // of minimum 4 positive integers. No floats or non-positive integers will be passed.
@@ -44,7 +44,10 @@ function sumTwoSmallestNumbers(numbers) {
   return sortedIndex[0] + sortedIndex[1];
 }
 
-console.log(sumTwoSmallestNumbers(testArr));
+console.log(
+  "Q2: Return sum of two lowest positive numbers",
+  sumTwoSmallestNumbers(testArr)
+);
 
 // For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
 // [10, 343445353, 3453445, 3453545353453] should return 3453455
@@ -74,7 +77,10 @@ function sortArray(array) {
   return array;
 }
 
-console.log(sortArray(testArr2));
+console.log(
+  "Q3:Sort Odd numbers without unsorting even numebrs",
+  sortArray(testArr2)
+);
 
 // 4. Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
 
@@ -103,7 +109,10 @@ function getSum(a, b) {
   return finalSum;
 }
 
-console.log(getSum(-1, 2));
+console.log(
+  "Q4:Find sum of all integers between 2 positive/nonpositive integers",
+  getSum(-1, 2)
+);
 
 // Examples (a, b) --> output (explanation)
 // (1, 0) --> 1 (1 + 0 = 1)
@@ -138,7 +147,7 @@ function isPrime(num) {
   return true;
 }
 
-console.log(isPrime(3));
+console.log("Q5: Find a prime number", isPrime(3));
 
 // Requirements
 // You can assume you will be given an integer input.
@@ -152,7 +161,67 @@ console.log(isPrime(3));
 // 6. Given an array of integers your solution should find the smallest integer.
 
 // For example:
-
 // Given [34, 15, 88, 2] your solution will return 2
 // Given [34, -345, -1, 100] your solution will return -345
 // You can assume, for the purpose of this kata, that the supplied array will not be empty.
+
+// a. create a function
+// b. sort the array thats passed
+// c. find the smallest number
+// c. return the smallest number
+// edge cases: negative int, same ints
+
+let testArr3 = [1, 2, 3, 4, 10];
+
+function findSmallestInt(arr) {
+  let sorted = arr.sort((a, b) => a - b);
+
+  return sorted[0];
+}
+
+console.log("Q6: Find the smallest integer", findSmallestInt(testArr3));
+
+// 7. Write a function that accepts a non-negative integer n and a string s as parameters, and returns a string of s repeated exactly n times.
+
+// a. write a function that takes a str and a number
+// b. find a place to store output
+// c. find amount of times needed to conact
+// d. add to new string by the number passed
+// e. return output
+
+function repeatStr(str, num) {
+  let fullStr = "";
+  for (let i = 0; i < num; i++) {
+    fullStr += str;
+  }
+
+  return fullStr;
+}
+
+console.log("Q7: Repeat a string", repeatStr("hello", 5));
+
+// 8. Return the number (count) of vowels in the given string.
+
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+// a. write a function that takes a string
+// b. create a counter for the number of vowels
+// c. create a list of vowels
+// d. loop through the string, find the vowels
+
+function getCount(str) {
+  let count = 0;
+  let vowels = ["a", "e", "i", "o", "u"];
+
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+console.log(
+  "Q8: Find the number of vowels in a given string",
+  getCount("wordsofwords")
+);
